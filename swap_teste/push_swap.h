@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/06/15 02:10:09 by username         #+#    #+#              */
-/*   Updated: 2026/06/18 15:10:37 by username        ###   ########.fr        */
+/*   Updated: 2026/06/22 14:55:51 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,28 @@ int			ft_create_and_append(t_stack *stack, char *str);
 int			ft_atoi(const char *npr);
 char		*ft_strchr(const char *s, int c);
 char		**ft_split(char const *s, char c);
-void		swap(t_stack  *stack);
+void		swap(t_stack *stack);
 void		sa(t_stack *a);
-void		sb(t_stack  *b);
-void		ss(t_stack  *a, t_stack  *b);
-void 		push(t_stack *from, t_stack *to);
-void 		pa(t_stack *a, t_stack *b);
-void 		pb(t_stack *a, t_stack *b);
-void 		rotate(t_stack *stack);
-void 		ra(t_stack *a);
-void 		rb(t_stack *b);
-void 		rr(t_stack *a, t_stack *b);
-void 		reverse(t_stack *stack);
-void 		rra(t_stack *a);
-void 		rrb(t_stack *b);
-void 		rrr(t_stack *a, t_stack *b);
-
+void		sb(t_stack *b);
+void		ss(t_stack *a, t_stack *b);
+void		push(t_stack *from, t_stack *to);
+void		pa(t_stack *a, t_stack *b);
+void		pb(t_stack *a, t_stack *b);
+void		rotate(t_stack *stack);
+void		ra(t_stack *a);
+void		rb(t_stack *b);
+void		rr(t_stack *a, t_stack *b);
+void		reverse(t_stack *stack);
+void		rra(t_stack *a);
+void		rrb(t_stack *b);
+void		rrr(t_stack *a, t_stack *b);
+void 		sort_radix(t_stack *a, t_stack *b);
+void 		process_bit(t_stack *a, t_stack *b, int bit);
+int 		has_bit(int n, int bit);
+int 		max_bits(t_stack *a);
+int 		is_sorted(t_stack *stack);
+void 		sort_3(t_stack *a);
+void 		extract_top(t_stack *a);
+void 		sort_n2(t_stack *a, t_stack *b);
+double		disorder(t_stack *stack);
 #endif

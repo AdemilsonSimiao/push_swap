@@ -6,17 +6,15 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/06/18 15:57:23 by username         #+#    #+#              */
-/*   Updated: 2026/06/18 15:58:03 by username        ###   ########.fr        */
+/*   Updated: 2026/06/22 15:06:22 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Rotate(ra, rb, rr) : Shift all elements of the stack up by 1 position(the 1st element becomes the last).
-
 #include "push_swap.h"
 
-void rotate(t_stack *stack)
+void	rotate(t_stack *stack)
 {
-	t_node *first;
+	t_node	*first;
 
 	if (!stack || !stack->head || !stack->head->next)
 		return ;
@@ -28,19 +26,19 @@ void rotate(t_stack *stack)
 	stack->tail = first;
 }
 
-void ra(t_stack *a)
+void	ra(t_stack *a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);
 }
 
-void rb(t_stack *b)
+void	rb(t_stack *b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);
 }
 
-void rr(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b)
 {
 	rotate(a);
 	rotate(b);

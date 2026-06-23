@@ -25,6 +25,7 @@ int is_sorted(t_stack *stack)
 	}
 	return (1);
 }
+
 void sort_3(t_stack *a)
 {
 	int first;
@@ -53,6 +54,7 @@ void sort_3(t_stack *a)
 	else if (first < second && second > third && first > third)
 		rra(a);
 }
+
 void extract_top(t_stack *a)
 {
 	t_node *curr;
@@ -82,7 +84,6 @@ void extract_top(t_stack *a)
 		while (a->head != node)
 			rra(a);
 }
-
 
 void sort_n2(t_stack *a, t_stack *b)
 {

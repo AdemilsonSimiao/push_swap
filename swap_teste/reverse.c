@@ -6,21 +6,19 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/06/18 15:55:20 by username         #+#    #+#              */
-/*   Updated: 2026/06/18 15:56:11 by username        ###   ########.fr        */
+/*   Updated: 2026/06/22 15:10:26 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Reverse Rotate(rra, rrb, rrr) : Shift all elements of the stack down by 1 position(the last element becomes the first).
-
 #include "push_swap.h"
 
-void reverse(t_stack *stack)
+void	reverse(t_stack *stack)
 {
-	t_node *last;
-	t_node *prev;
+	t_node	*last;
+	t_node	*prev;
 
 	if (!stack || !stack->head || !stack->head->next)
-		return (0);
+		return ;
 	prev = stack->head;
 	while (prev->next->next)
 		prev = prev->next;
@@ -31,19 +29,19 @@ void reverse(t_stack *stack)
 	stack->tail = prev;
 }
 
-void rra(t_stack *a)
+void	rra(t_stack *a)
 {
 	reverse(a);
 	write(1, "rra\n", 4);
 }
 
-void rrb(t_stack *b)
+void	rrb(t_stack *b)
 {
 	reverse(b);
 	write(1, "rrb\n", 4);
 }
 
-void rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack *a, t_stack *b)
 {
 	reverse(a);
 	reverse(b);
