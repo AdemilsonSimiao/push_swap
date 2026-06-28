@@ -1,0 +1,291 @@
+Fase 1 – Compreensão do Problema ✅
+1. Necessidade do cliente
+
+Foi identificado o objetivo do projeto.
+
+O que o cliente deseja.
+Qual problema precisa ser resolvido.
+2. Levantamento dos requisitos
+
+Foi extraído do Subject tudo o que o software deve fazer.
+
+Funcionalidades.
+Objetivos.
+Critérios de sucesso.
+3. Regras e restrições
+
+Foram identificados os limites impostos pelo cliente.
+
+Operações permitidas.
+Estruturas permitidas.
+Formato da entrada.
+Formato da saída.
+Restrições da implementação.
+Fase 2 – Descoberta da Estrutura ✅
+4. Identificação dos módulos
+
+O projeto foi dividido em módulos funcionais.
+
+Entrada
+Validação
+Estruturas
+Operações
+Disorder
+Estratégias
+Seleção
+Benchmark
+Saída
+Tratamento de erros
+Desempenho
+5. Relacionamento entre os módulos
+
+Foi descoberto como os módulos dependem uns dos outros.
+
+Não é uma ordem de implementação.
+
+É a arquitetura lógica do sistema.
+
+6. Visão global do sistema
+
+Pela primeira vez foi possível visualizar o projeto como um todo.
+
+O push_swap deixou de ser um conjunto de funções e passou a ser um sistema.
+
+# Push_swap — Documentação 01
+
+# Visão Geral do Projeto
+
+## Objetivo
+
+Desenvolver um sistema capaz de ordenar uma sequência de números inteiros utilizando apenas as operações permitidas pelo Subject.
+
+O sistema deverá receber os dados pela linha de comando, processá-los utilizando a estratégia de ordenação apropriada e produzir como saída uma sequência de operações capaz de ordenar a pilha A.
+
+---
+
+# Escopo
+
+O projeto é composto por um conjunto de módulos interdependentes que trabalham em sequência para transformar uma entrada em uma solução válida.
+
+Fluxo geral do sistema:
+
+```
+Entrada
+    ↓
+Validação
+    ↓
+Estruturas de Dados
+    ↓
+Análise (Disorder)
+    ↓
+Seleção da Estratégia
+    ↓
+Estratégia de Ordenação
+    ↓
+Operações
+    ↓
+Saída
+```
+
+Módulos auxiliares:
+
+* Tratamento de Erros
+* Benchmark
+* Avaliação de Desempenho
+
+---
+
+# Arquitetura Geral
+
+O sistema é dividido em onze módulos principais.
+
+1. Entrada de Dados
+2. Validação
+3. Estruturas de Dados
+4. Operações
+5. Disorder
+6. Seleção da Estratégia
+7. Estratégias de Ordenação
+8. Saída
+9. Benchmark
+10. Tratamento de Erros
+11. Desempenho
+
+Cada módulo possui uma responsabilidade específica dentro do sistema e depende apenas dos módulos necessários ao seu funcionamento.
+
+---
+
+# Estado Atual do Projeto
+
+## Concluído
+
+* Compreensão da necessidade do cliente.
+* Levantamento dos requisitos.
+* Identificação das regras e restrições.
+* Identificação dos módulos do sistema.
+* Mapeamento do relacionamento entre os módulos.
+* Visão geral da arquitetura.
+
+## Próxima Etapa
+
+Planejamento da ordem de desenvolvimento dos módulos.
+
+# Plano Mestre do Projeto
+
+# 11. Ordem de Desenvolvimento dos Módulos (Macro)
+
+## Objetivo
+
+Definir a sequência macro de construção do sistema, respeitando a arquitetura e o relacionamento entre os módulos.
+
+---
+
+# Etapa 1 — Fluxo Principal
+
+Construção dos módulos que compõem o fluxo principal do sistema.
+
+1. Entrada de Dados
+2. Validação
+3. Estruturas de Dados
+4. Métrica de Desordem (Disorder)
+5. Seleção da Estratégia
+6. Estratégias de Ordenação
+7. Saída
+
+---
+
+# Etapa 2 — Infraestrutura
+
+Construção dos módulos que dão suporte ao funcionamento do fluxo principal.
+
+1. Operações
+
+---
+
+# Etapa 3 — Módulos de Apoio
+
+Construção dos módulos responsáveis pelo suporte, monitoramento e validação da execução.
+
+1. Tratamento de Erros
+2. Benchmark
+3. Desempenho
+
+
+===== Estado atual do diagrama =====
+
+                    CLIENTE
+                       │
+                       ▼
+              NECESSIDADE DO CLIENTE
+                       │
+                       ▼
+                 REQUISITOS
+                       │
+                       ▼
+             REGRAS E RESTRIÇÕES
+                       │
+                       ▼
+            ───────────────────────
+             PROJETO (push_swap)
+            ───────────────────────
+                       │
+                       ▼
+          ARQUITETURA GERAL DO SISTEMA
+                       │
+                       ▼
+              FLUXO PRINCIPAL
+                       │
+      ┌────────────────┼────────────────┐
+      │                │                │
+      ▼                ▼                ▼
+ Entrada         Validação        Tratamento
+ de Dados                          de Erros
+      │
+      ▼
+ Estruturas
+      │
+      ▼
+ Disorder
+      │
+      ▼
+ Seleção
+      │
+      ▼
+ Estratégias
+      │
+      ▼
+ Saída
+
+          ▲
+          │
+     Operações
+ (infraestrutura)
+
+ Benchmark
+ (observação)
+
+ Desempenho
+ (validação)
+
+
+modulo micro
+
+Módulo: Fluxo Principal
+Objetivo
+
+Detalhar o Fluxo Principal do sistema, estabelecendo a ordem de construção dos módulos que processam a informação desde a entrada dos dados até a geração da saída.
+
+Escopo
+
+Este documento contempla exclusivamente os módulos pertencentes ao Fluxo Principal.
+
+Não fazem parte deste documento:
+
+Operações (Infraestrutura)
+Tratamento de Erros
+Benchmark
+Desempenho
+
+Esses módulos possuem documentos próprios.
+
+Ordem de Desenvolvimento
+
+Etapa 1
+
+Entrada de Dados
+
+↓
+
+Etapa 2
+
+Validação
+
+↓
+
+Etapa 3
+
+Estruturas de Dados
+
+↓
+
+Etapa 4
+
+Disorder
+
+↓
+
+Etapa 5
+
+Seleção da Estratégia
+
+↓
+
+Etapa 6
+
+Estratégias de Ordenação
+
+↓
+
+Etapa 7
+
+Saída

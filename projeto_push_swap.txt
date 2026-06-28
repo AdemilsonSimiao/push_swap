@@ -1,0 +1,119 @@
+Projeto push_swap
+
+Descrição
+
+"O push_swap é um sistema de transformação de dados, organizado em módulos interdependentes, que recebe uma sequência de números, decide a melhor estratégia de ordenação conforme suas regras e produz uma sequência de operações capaz de ordenar a pilha A."
+
+Desenvolver um programa chamado push_swap.
+Receber uma lista de números inteiros pela linha de comando.
+Ordenar os números em ordem crescente na pilha A.
+Utilizar apenas as operações permitidas (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr).
+Implementar quatro estratégias de ordenação (Simple, Medium, Complex e Adaptive).
+Medir a desordem (disorder) antes de qualquer movimentação.
+Permitir selecionar a estratégia por parâmetros ou usar Adaptive como padrão.
+Tratar todas as entradas inválidas exibindo "Error" na saída de erro.
+Possuir um modo --bench que apresente métricas da execução.
+Atingir as metas de desempenho estabelecidas para 100 e 500 números.
+
+regras ///
+
+Regras do ambiente
+O projeto deve ser feito em dupla.
+Deve ser desenvolvido em C.
+Deve seguir a estrutura de entrega (Makefile, .c, .h, etc.).
+Variáveis globais são proibidas.
+Regras da entrada
+Receber uma lista de inteiros pela linha de comando.
+Os números podem ser positivos ou negativos.
+Não pode haver números duplicados.
+Regras da solução
+Devem existir apenas duas pilhas: A e B.
+A pilha B começa vazia.
+O objetivo é deixar a pilha A em ordem crescente.
+Regras das operações
+Só podem ser utilizadas as 11 operações permitidas (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr).
+Regras dos algoritmos
+Implementar quatro estratégias obrigatórias:
+Simple
+Medium
+Complex
+Adaptive
+Medir a desordem antes de qualquer movimento.
+Regras de execução
+Permitir selecionar a estratégia por flags.
+Se nenhuma flag for passada, usar Adaptive.
+Regras de saída
+Imprimir apenas as operações no stdout.
+O modo --bench imprime métricas no stderr.
+Regras de erro
+Qualquer entrada inválida deve imprimir Error no stderr.
+Regras de desempenho
+Atender às metas de operações para 100 e 500 números.
+
+modulos do subject
+
+Entrada de dados (receber os argumentos).
+Validação (verificar se a entrada é válida).
+Estruturas de dados (pilhas A e B).
+Operações (sa, pb, ra...).
+Métrica de desordem (Disorder).
+Estratégias de ordenação (Simple, Medium, Complex e Adaptive).
+Seleção da estratégia (flags ou modo padrão).
+Benchmark (--bench).
+Saída (operações e benchmark).
+Tratamento de erros.
+Desempenho (metas para 100 e 500 números).
+
+Mapear o relacionamento entre os módulos.
+
+                 Entrada de dados
+                         │
+                         ▼
+                   Validação
+                  ┌─────┴─────┐
+                  │           │
+             Erro? Não        Sim
+                  │           │
+                  ▼           ▼
+        Estruturas de dados  Tratamento
+                  │           de erros
+                  │
+                  ▼
+        Métrica de desordem
+                  │
+                  ▼
+      Seleção da estratégia
+                  │
+                  ▼
+   Estratégias de ordenação
+                  │
+                  ▼
+             Operações
+                  │
+          ┌───────┴────────┐
+          ▼                ▼
+       Saída          Benchmark
+                           │
+                           ▼
+                     Desempenho
+
+O que temos ate agora //
+
+Um sistema que recebe dados de entrada.
+Valida esses dados.
+Constrói sua estrutura interna (pilhas).
+Analisa o estado inicial (disorder).
+Decide qual estratégia utilizar.
+Executa a estratégia escolhida utilizando apenas operações permitidas.
+Produz uma saída.
+Opcionalmente mede seu próprio desempenho (--bench).
+
+Também sabemos algo que não sabíamos no início:
+
+Existe uma entrada única do sistema.
+Existe um fluxo principal.
+Existem dependências entre os módulos.
+Existem módulos estruturais (sem eles o sistema não existe).
+Existem módulos de processamento (realizam a lógica principal).
+Existem módulos de apoio (benchmark, tratamento de erros).
+Existe uma saída única do sistema.
