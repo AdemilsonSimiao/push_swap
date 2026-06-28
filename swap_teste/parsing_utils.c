@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   parsing.c                                         :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/06/15 02:09:35 by username         #+#    #+#              */
-/*   Updated: 2026/06/22 14:56:01 by username        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/15 02:09:35 by username          #+#    #+#             */
+/*   Updated: 2026/06/27 14:46:21 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,23 @@ void	ft_add_head(t_stack *stack, t_node *new)
 	(stack)->head = new;
 	(stack)->size++;
 }
-
+void ft_add_tail(t_stack *stack, t_node *new)
+{
+	if (!stack || !new)
+		return ;
+	new->next = NULL;
+	if (stack->head == NULL)
+	{
+		stack->head = new;
+		stack->tail = new;
+	}
+	else
+	{
+		stack->tail->next = new;
+		stack->tail = new;
+	}
+	stack->size++;
+}
 t_node	*ft_new_node(int data)
 {
 	t_node	*new_node;
@@ -51,17 +67,19 @@ t_node	*ft_new_node(int data)
 	return (new_node);
 }
 
-t_stack	*ft_parse_args(char **argv)
+t_stack	*ft_parse_args(char **argv, int start_index)
 {
 	t_stack	*stack;
 	char	**str;
+	int		i;
 
+	i = start_index;
 	stack = ft_new_stack();
 	if (!stack)
 		return (NULL);
-	if (ft_strchr(argv[1], ' '))
+	if (ft_strchr(argv[i], ' '))
 	{
-		str = ft_split(argv[1], ' ');
+		str = ft_split(argv[i], ' ');
 		if (!str)
 			return (NULL);
 		while (*str)
@@ -69,8 +87,15 @@ t_stack	*ft_parse_args(char **argv)
 			return (NULL);
 	}
 	else
-		while (argv[1])
-		if (!ft_create_and_append(stack, *argv++))
-		return (NULL);
+		while (argv[i])
+		{
+			if(ft_strncmp(argv[i], "--", 2) == 0)
+			{
+				i++;
+			}
+			else if (!ft_create_and_append(stack, argv[i]))
+				return (NULL);
+			i++;
+		}
 	return (stack);
 }

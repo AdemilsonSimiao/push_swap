@@ -19,8 +19,6 @@ double	disorder(t_stack *stack)
 	t_node	*outer;
 	t_node	*inner;
 
-	if (total == 0)
-		return (0.0);
 	mistakes = 0;
 	total = 0;
 	outer = stack->head;
